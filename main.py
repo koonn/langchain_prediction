@@ -2,13 +2,11 @@ import os
 import openai
 import pandas as pd
 
+from langchain.chat_models import ChatOpenAI
+
 from dotenv import load_dotenv, find_dotenv
 _ = load_dotenv(find_dotenv())
 openai.api_key = os.environ['OPENAI_API_KEY']
-
-from langchain.chat_models import ChatOpenAI
-from langchain.agents import create_pandas_dataframe_agent
-from langchain.agents.agent_types import AgentType
 
 # データの読み込み
 df = pd.read_csv('./data/titanic.csv')
